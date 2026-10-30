@@ -1,0 +1,22 @@
+# Never redistribute Bosch competition data or generated predictions/models.
+data/*
+!data/.gitkeep
+*.csv
+*.csv.gz
+*.zip
+*.parquet
+*.pkl
+*.joblib
+*.npz
+artifacts/*
+!artifacts/.gitkeep
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+.env
+.jupyter/
+*.html
