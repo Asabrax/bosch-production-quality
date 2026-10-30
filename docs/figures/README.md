@@ -27,3 +27,15 @@ python scripts/export_portfolio_results.py \
 
 Review and update the README and interpretation whenever newly executed values change.
 The script rejects prefix runs, stale source hashes and mismatched run outputs.
+
+## Benchmark uncertainty figure
+
+`benchmark_uncertainty.png` is extracted unchanged from `benchmark_analysis.ipynb`, zero-based cell 9. Run: `benchmark_20261030T211650803231Z`. PNG SHA256: `5ca28e0d6f919877ae67f67b2870e04149db4855722da5fe4006265dc1a47895`. The original two figures remain available in the detailed methodology.
+
+Refresh after a complete benchmark run:
+
+```bash
+python scripts/export_benchmark_results.py --run artifacts/<benchmark-run-id>
+```
+
+The aggregate receipt and figure exporter checks sequential execution, absence of saved errors, run identity, notebook source hash and helper hashes.

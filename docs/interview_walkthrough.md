@@ -1,6 +1,6 @@
 # Five-minute project walkthrough
 
-Use this as a speaking outline, not a script to memorize. Open the README's two figures alongside it. The full numeric results and date experiment are separate runs; do not substitute historical scores for the executed results.
+Use this as a speaking outline, not a script to memorize. Open the README's uncertainty figure and the [detailed methodology](methodology.md) figures alongside it. The full numeric results and date experiment are separate runs; do not substitute historical scores for the executed results.
 
 ## 0:00–0:40 — Problem and scope
 
@@ -12,7 +12,7 @@ Explain why accuracy is inadequate: predicting every part as good would achieve 
 
 > My first finding was that missing measurements were structured. About 81% of numeric sensor values were missing on average, and some sensors within a station shared identical missing-value masks. But similar missing percentages did not always mean the same parts were missing: two S0/S1 sensors disagreed on 1,642 parts. I treated measurement availability as a possible production-route signal, rather than automatically deleting incomplete rows or filling the whole dataset with means.
 
-Show the missingness figure and the README decision table. Explain that zero is a recorded measurement, not a missing value. An IQR outlier flag identifies an unusual value; it does not prove an error. Without engineering evidence, retain extreme values and report the diagnostic.
+Show the missingness evidence and the [cleaning decision table](methodology.md#cleaning-decisions). Explain that zero is a recorded measurement, not a missing value. An IQR outlier flag identifies an unusual value; it does not prove an error. Without engineering evidence, retain extreme values and report the diagnostic.
 
 ## 1:40–2:30 — Features, memory and reproducibility
 
@@ -40,7 +40,7 @@ Show the gains/lift figure. Clarify that the evaluation populations differ: thei
 
 > Before claiming deployment readiness, I would define the prediction point, confirm which measurements exist then, establish when defect labels become available, and evaluate the frozen workflow on genuinely new parts. Earliest/latest timestamps and full-route counts can contain future information for an early-warning use case. Inspection costs and missed-defect costs are also needed before deciding whether the model is useful.
 
-Close with what the project demonstrates: justified data-quality decisions, consistent features, explicit evaluation populations, and reproducible software checks. The README links to both executed notebooks, the audit and the synthetic-test workflow.
+Close with what the project demonstrates: justified data-quality decisions, consistent features, explicit evaluation populations, and reproducible software checks. The README links to all three executed notebooks, the audit and the synthetic-test workflow.
 
 ## Likely follow-up questions
 
@@ -55,6 +55,10 @@ Close with what the project demonstrates: justified data-quality decisions, cons
 | Why exclude rows at temporal boundaries? | A training part whose last record occurs in the validation period uses observations from beyond that boundary. The purge is explicit, and those rows remain in the quality analysis. |
 | Is the evaluation truly independent? | No. The original dataset informed exploratory hypotheses. A genuinely untouched future cohort is still required. |
 | What does CI verify? | Synthetic feature/split/metric tests and notebook schema/syntax. It does not execute the large dataset or certify scientific conclusions. |
+
+## Benchmark follow-up
+
+The unweighted HGB changes only class weighting, keeping features and splits fixed. Chronological AP is 1.19% versus 1.66% for the balanced model; at 1% capacity it finds 98 versus 113 defects. Paired time-bin bootstrap intervals for the differences include zero at all three tested widths. Explain why a higher point estimate does not establish an advantage, and why fixed-model evaluation intervals omit retraining and future drift. See the [benchmark analysis](benchmark.md) for exact intervals and assumptions.
 
 ## Before the interview
 

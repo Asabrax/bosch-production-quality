@@ -40,7 +40,7 @@ jobs:
           from pathlib import Path
           import nbformat
 
-          for path in (Path('explore.ipynb'), Path('date_analysis.ipynb')):
+          for path in (Path('explore.ipynb'), Path('date_analysis.ipynb'), Path('benchmark_analysis.ipynb')):
               notebook = nbformat.read(path, as_version=4)
               nbformat.validate(notebook)
               for index, cell in enumerate(notebook.cells):

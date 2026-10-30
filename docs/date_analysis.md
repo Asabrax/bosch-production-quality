@@ -129,3 +129,7 @@ The chronological validation difference is small and has no uncertainty interval
 | Recall at inspection capacity | 17.8886% | 11.7220% |
 
 The later-time evaluation was substantially weaker in this run, despite a similar validation AP. This supports taking temporal evaluation seriously and avoiding a generalization claim based only on the random-split score. The two evaluation populations and their prevalence differ, and earlier historical exploration remains a limitation: **the gap is not an isolated estimate of leakage, nor an independently validated performance forecast**. No tuning was performed in response to these evaluation outcomes.
+
+## Later class-weight benchmark
+
+The [benchmark extension](benchmark.md) holds this experiment's selected features and saved partitions fixed, compares unweighted HGB, and adds paired time-bin uncertainty for chronological evaluation. It does not test the causal value of date features or replace the original validation selection.

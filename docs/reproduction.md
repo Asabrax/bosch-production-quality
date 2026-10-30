@@ -84,3 +84,18 @@ For date-model inspection or future inference, `summarize_date_chunk` reproduces
 ## Automated versus scientific verification
 
 GitHub Actions runs the synthetic tests and checks active notebook structure/code syntax on Python 3.14.4. It downloads Python dependencies but does not download competition files or rerun large experiments. A green workflow is evidence about those software checks, not proof of data validity, independent generalization, business value or deployment readiness.
+
+## Class-weight benchmark and uncertainty
+
+After a full date notebook run, point the benchmark to that run directory:
+
+```bash
+BOSCH_BENCHMARK_SOURCE=artifacts/<date-run-id> python -m jupyter nbconvert \
+  --execute --to notebook --inplace benchmark_analysis.ipynb \
+  --ExecutePreprocessor.timeout=-1
+python scripts/export_benchmark_results.py --run artifacts/<benchmark-run-id>
+```
+
+The benchmark requires the source manifest, saved split IDs, and trusted fitted bundles. It verifies source file size/mtime, helper hashes, schema and split membership, and reproduces saved balanced-model scores. It streams the original full files again and trains two unweighted comparators. `BOSCH_DATA_PATH` and `BOSCH_DATE_PATH` can relocate unchanged source files. It deliberately rejects partial date runs. Run the date notebook first on a fresh checkout; ignored artifacts are not distributed.
+
+Bootstrap settings are declared in the notebook: 1,000 paired draws at time-bin widths 5, 10, and 20; primary width 10; seed 42. Fixed-model intervals cover chronological evaluation only. Exact draws, part predictions, and model bundles stay in ignored `artifacts/`; only aggregates and the figure are exported. Regenerate the written interpretation if rerunning changes the results.

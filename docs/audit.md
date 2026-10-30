@@ -149,3 +149,13 @@ The compact public receipt in `docs/results.json` records both full runs, aggreg
 The synthetic suite remains **19 passing tests**. The GitHub Actions workflow also passed remotely after its introduction: [workflow run 41125647201](https://github.com/Asabrax/bosch-production-quality/actions/runs/41125647201). CI checks code on synthetic inputs and validates active notebook format/syntax; it neither downloads the dataset nor executes the full experiments.
 
 The full run closes the earlier execution gap, not the methodological limits: prior exploration/test exposure, sparse subgroup uncertainty, unverified prediction-time information and missing label-maturity/process context remain. The date notebook and archived original were preserved while completing this numeric run.
+
+## Class-weight benchmark and uncertainty extension — 2026-10-30
+
+A separate `benchmark_analysis.ipynb` preserves the original numeric/date notebooks and helpers. It reloads the full files, verifies source metadata and helper hashes, matches saved split IDs exactly, and reproduces the saved balanced-model evaluation. Two cloned HGB comparators change only `class_weight=None`, with no tuning or replacement-model selection. Training-only supervised selection and the numeric S32/S33 definition remain unchanged.
+
+Chronological uncertainty uses a paired time-bin cluster bootstrap for fixed fitted models: 1,000 draws at widths 5, 10, and 20 in supplied time units; width 10 is primary. AP pools score ties and inspection metrics use stable input order with ceiling capacity, matching the project policy. Tests reconcile integer-multiplicity calculations with explicit repeated rows and verify pairing, deterministic draws, and invalid-input handling. The suite now has 22 tests; CI also validates the new notebook.
+
+An initial calculation completed but encountered a figure-title syntax error before final notebook export. The string was corrected and a fresh top-to-bottom run was used for publication; the incomplete local run is not a public receipt. Source data, saved IDs, original notebooks and their model helpers were preserved.
+
+The README now contains one uncertainty figure; the original figures and full methodological detail remain linked. Exact run provenance and interval diagnostics are in `docs/benchmark_results.json`; assumptions and paired differences at all widths are in `docs/benchmark.md`. These additions do not supply an independent holdout, account for training/selection uncertainty, or verify prediction-time availability.
