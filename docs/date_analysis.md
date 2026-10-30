@@ -75,12 +75,12 @@ For new data, `summarize_date_chunk` applies the same date transformation with a
 
 ## Validation status
 
-Verification findings and run scope are recorded below after execution. Successful prefix checks alone do not establish full-data results. The numeric baseline's earlier full-data execution limitation remains separate from this extension.
+Verification findings and run scope are recorded below after execution. Successful prefix checks alone do not establish full-data results. The numeric baseline was subsequently executed in full on 2026-10-30; see `audit.md` for that separate run.
 
 ### Completed verification — 2026-10-29
 
 - **19 tests passed** across the project (11 numeric and 8 date tests). New checks cover zero/missing times, chunk-size invariance, cross-chunk duplicate IDs, duplicate headers/infinities, both-sided join accounting, preserved row order, temporal ties, overlap purging, unknown-time quarantine, label-independent time boundaries, equal comparator cohorts, numeric target validation and model-selection isolation from evaluation labels.
-- A 20,000-row prefix execution passed first. The date notebook then executed **top-to-bottom on both full files**, including all four model fits. Nine code cells completed in sequence, without error outputs. This does not imply the separate original numeric notebook was fully rerun.
+- A 20,000-row prefix execution passed first. The date notebook then executed **top-to-bottom on both full files**, including all four model fits. Nine code cells completed in sequence, without error outputs. At this stage the separate numeric notebook had only a prefix check; its full run was later completed on 2026-10-30 and is recorded in `audit.md`.
 - Full run: `artifacts/dates_20261029T140103667151Z/`. Notebook format, Python syntax, source hashes and normalized notebook-source hash were checked against the manifest. Stored split/exclusion IDs reconcile to all 1,183,747 parts with no overlap; the random and chronological strategies use exactly the same retained cohort. Evaluation confusion counts and precision/recall arithmetic were independently reconciled against the manifest counts.
 - Three rendered notebook figures were visually inspected for labels, units, ranges, legends and clipping. The numeric notebook, numeric helper and archived original retained their pre-extension SHA-256 hashes. Full-page browser rendering was not performed.
 - The retained joined frame reported approximately **0.225 GiB** of DataFrame memory. This is not peak process memory; chunk parsing, transformations and model fitting need additional memory. Process peak memory and formal runtime benchmarking were not measured.

@@ -103,7 +103,7 @@ The eight requested notebook sections adapt CRISP-DM to this project; they are n
 
 ## Verification record
 
-See the final verification details appended below. Checks use bounded source rows and synthetic fixtures; archived historical metrics are preserved as evidence, not rerun. Full-data execution and full-data peak memory/runtime remain unverified. Running all notebook cells with `BOSCH_NROWS=0` is the next reproducibility check, after inspecting the new selection specification.
+The initial verification below used bounded source rows and synthetic fixtures. A full numeric execution was subsequently completed on 2026-10-30; see the full-run record below. Archived historical experiments remain reference evidence and were not rerun. Peak process memory has not been measured.
 
 Final checks performed:
 
@@ -115,8 +115,37 @@ Final checks performed:
 - Archived original SHA-256: `071c3d5f9d449789bf3b795798ddb4e16bf7dad854a0d9076d1d3ce524a4eb24` (56 cells). The original outputs are historical evidence only; they were not re-executed.
 - At the initial refactor verification, no Git repository had been initialized or commit made. `.gitignore` excludes local CSVs, environments, model bundles, split IDs and run artifacts from subsequent publication.
 
-Manual review priorities: the training-only focus-station rule versus the historical list; the operational timing/meaning of S32/S33 and other station measurements; whether 1% inspection and F1 threshold selection match the actual business objective; and a full-data run before publishing any new performance result. A genuinely independent validation cohort is still required for generalization claims.
+Manual review priorities: the training-only focus-station rule versus the historical list; the operational timing/meaning of S32/S33 and other station measurements; and whether 1% inspection and F1 threshold selection match the actual business objective. Full numeric execution is now recorded below. A genuinely independent validation cohort is still required for generalization claims.
 
 ## Separate date extension
 
 A later authorized extension added `date_analysis.ipynb`, `bosch_dates.py` and `tests/test_dates.py`. It completed a full-file join/timestamp-quality scan and fixed chronological-versus-random experiment; see `docs/date_analysis.md` for definitions, actual findings and limitations. The original numeric notebook, its helpers and the archived notebook were unchanged (hash-checked). The project's combined test suite now has 19 passing tests. Full execution of the date extension does not retroactively verify the original numeric notebook's complete experiment or its historical metrics.
+
+
+## Full numeric execution and portfolio completion — 2026-10-30
+
+The refactored `explore.ipynb` executed top-to-bottom with `BOSCH_NROWS=0` on all **1,183,747 rows**, including **6,879 defects**. All 13 code cells completed in sequence without errors, and all 35 candidates ran. The seven figures are retained in the notebook. Run ID: `20261030T204345176829Z`. The notebook's recorded execution timestamps span approximately 4 minutes 34 seconds on this host; this is a single observed run, not a runtime guarantee or formal benchmark. Peak process memory was not measured.
+
+The full rerun reconfirmed mean sensor missingness of **81.084898%** and the **1,642** missing-mask disagreements between `L0_S0_F2` and `L0_S1_F24`. Its target-conditioned EDA remains training-only. Historical full-data outlier/target tables in the archive should not be confused with those training-only tables.
+
+Training-only station selection chose **L3_S32, L3_S33, L3_S34 and L3_S31**. The selected candidate was `hgb_leaves_7_lr_0.1` on `station_counts_plus_focus_values`: **50 station counts plus 14 selected sensor values**. All default candidates excluded `S32_only`. The selected model was not refit after validation.
+
+| Newly executed numeric result | Value |
+|---|---:|
+| Training parts / defects | 757,597 / 4,402 |
+| Validation parts / defects | 189,400 / 1,101 |
+| Exploratory evaluation parts / defects | 236,750 / 1,376 |
+| Validation AP | 5.6112% |
+| Exploratory evaluation AP | 4.8740% |
+| Evaluation prevalence | 0.5812% |
+| Inspected at approximately 1% | 2,368 |
+| Defects detected at that capacity | 208 |
+| Precision / recall at capacity | 8.7838% / 15.1163% |
+
+The validation-F1-selected score threshold was **0.9**. That is a separate policy from the 1% inspection capacity. Historical test AP of approximately 4.35% remains a reference for a different procedure, not a reproduced result or an independent benchmark. The original model's floor-based 1% rule inspected 2,367 parts; this experiment's ceiling rule inspected 2,368.
+
+The compact public receipt in `docs/results.json` records both full runs, aggregate metrics, feature columns and source hashes without publishing raw rows, split IDs or model bundles. The README's two PNGs are extracted unchanged from executed outputs; `docs/figures/README.md` records cells, run IDs and image checksums. The export script checks scope, sequential execution, errors and matching source hashes before publication.
+
+The synthetic suite remains **19 passing tests**. The GitHub Actions workflow also passed remotely after its introduction: [workflow run 41125647201](https://github.com/Asabrax/bosch-production-quality/actions/runs/41125647201). CI checks code on synthetic inputs and validates active notebook format/syntax; it neither downloads the dataset nor executes the full experiments.
+
+The full run closes the earlier execution gap, not the methodological limits: prior exploration/test exposure, sparse subgroup uncertainty, unverified prediction-time information and missing label-maturity/process context remain. The date notebook and archived original were preserved while completing this numeric run.

@@ -1,0 +1,359 @@
+{
+  "status": "Executed full-file exploratory experiments; not independent validation.",
+  "numeric": {
+    "run_id": "20261030T204345176829Z",
+    "scope": "full numeric dataset",
+    "loaded_rows": 1183747,
+    "seed": 42,
+    "python": "3.14.4",
+    "versions": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "joblib": "1.6.0"
+    },
+    "split_summary": [
+      {
+        "split": "train",
+        "parts": 757597,
+        "defects": 4402,
+        "defect_prevalence": 0.0058104770742228385
+      },
+      {
+        "split": "validation",
+        "parts": 189400,
+        "defects": 1101,
+        "defect_prevalence": 0.005813093980992608
+      },
+      {
+        "split": "exploratory_evaluation",
+        "parts": 236750,
+        "defects": 1376,
+        "defect_prevalence": 0.005812038014783527
+      }
+    ],
+    "selected_model": "hgb_leaves_7_lr_0.1",
+    "selected_feature_set": "station_counts_plus_focus_values",
+    "training_selected_focus_stations": [
+      "L3_S32",
+      "L3_S33",
+      "L3_S34",
+      "L3_S31"
+    ],
+    "model_columns": [
+      "L0_S0_count",
+      "L0_S1_count",
+      "L0_S10_count",
+      "L0_S11_count",
+      "L0_S12_count",
+      "L0_S13_count",
+      "L0_S14_count",
+      "L0_S15_count",
+      "L0_S16_count",
+      "L0_S17_count",
+      "L0_S18_count",
+      "L0_S19_count",
+      "L0_S2_count",
+      "L0_S20_count",
+      "L0_S21_count",
+      "L0_S22_count",
+      "L0_S23_count",
+      "L0_S3_count",
+      "L0_S4_count",
+      "L0_S5_count",
+      "L0_S6_count",
+      "L0_S7_count",
+      "L0_S8_count",
+      "L0_S9_count",
+      "L1_S24_count",
+      "L1_S25_count",
+      "L2_S26_count",
+      "L2_S27_count",
+      "L2_S28_count",
+      "L3_S29_count",
+      "L3_S30_count",
+      "L3_S31_count",
+      "L3_S32_count",
+      "L3_S33_count",
+      "L3_S34_count",
+      "L3_S35_count",
+      "L3_S36_count",
+      "L3_S37_count",
+      "L3_S38_count",
+      "L3_S39_count",
+      "L3_S40_count",
+      "L3_S41_count",
+      "L3_S43_count",
+      "L3_S44_count",
+      "L3_S45_count",
+      "L3_S47_count",
+      "L3_S48_count",
+      "L3_S49_count",
+      "L3_S50_count",
+      "L3_S51_count",
+      "L3_S32_F3850",
+      "L3_S33_F3855",
+      "L3_S33_F3857",
+      "L3_S33_F3859",
+      "L3_S33_F3861",
+      "L3_S33_F3863",
+      "L3_S34_F3876",
+      "L3_S34_F3878",
+      "L3_S34_F3880",
+      "L3_S34_F3882",
+      "L3_S31_F3834",
+      "L3_S31_F3838",
+      "L3_S31_F3842",
+      "L3_S31_F3846"
+    ],
+    "validation_average_precision": 0.05611231380373546,
+    "exploratory_evaluation_average_precision": 0.04874041071839212,
+    "exploratory_evaluation_capacity": {
+      "capacity_requested": 0.01,
+      "inspected": 2368,
+      "capacity_actual": 0.010002111932418163,
+      "precision": 0.08783783783783784,
+      "recall": 0.1511627906976744,
+      "f1": 0.11111111111111112,
+      "tn": 233214,
+      "fp": 2160,
+      "fn": 1168,
+      "tp": 208,
+      "lift": 15.113087287869265
+    },
+    "exploratory_evaluation_threshold": {
+      "precision": 0.1665264928511354,
+      "recall": 0.1438953488372093,
+      "f1": 0.15438596491228068,
+      "tn": 234383,
+      "fp": 991,
+      "fn": 1178,
+      "tp": 198
+    },
+    "chosen_threshold": 0.9,
+    "primary_capacity": 0.01,
+    "independent_holdout": false,
+    "code_sha256": {
+      "bosch.py": "9e37e1f085f7432088878d75f87deaf542180bb377990cd2e79d03cf0a34b24f",
+      "requirements.txt": "2da6476b4022d78cab19175ecaf37332f128b54879a7ebfd0485a52eef21352b",
+      "requirements.lock": "c3e40f99b8f69886c70704b0254fda92981a3e0c65b5e18ae6a53a43bbfbaccd"
+    },
+    "notebook_source_sha256": "fdf396e5a1682cabecc4adf0d5242add0c783c739f4c4ac7e632630193585c0e"
+  },
+  "date_extension": {
+    "run_id": "dates_20261029T140103667151Z",
+    "scope": "full local numeric and date files",
+    "seed": 42,
+    "python": "3.14.4",
+    "versions": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2"
+    },
+    "join_audit": {
+      "numeric_rows": 1183747,
+      "date_rows": 1183747,
+      "matched_ids": 1183747,
+      "numeric_only_ids": 0,
+      "date_only_ids": 0,
+      "joined_rows": 1183747,
+      "matched_but_all_dates_missing": 582
+    },
+    "date_quality": {
+      "date_columns": 1156.0,
+      "mean_column_missing_fraction": 0.8224361792355898,
+      "columns_all_missing": 0.0,
+      "zero_timestamp_cells": 12.0,
+      "negative_timestamp_cells": 0.0,
+      "numeric_parts_without_known_time": 582.0,
+      "parts_with_zero_recorded_span": 120.0,
+      "parts_with_positive_recorded_span": 1183045.0
+    },
+    "temporal_boundaries": {
+      "validation_start": 1046.36,
+      "evaluation_start": 1356.56
+    },
+    "exclusions": [
+      {
+        "reason": "unknown_dates",
+        "parts": 582,
+        "defects": 2
+      },
+      {
+        "reason": "overlap_at_validation",
+        "parts": 23179,
+        "defects": 41
+      },
+      {
+        "reason": "overlap_at_evaluation",
+        "parts": 2468,
+        "defects": 16
+      }
+    ],
+    "split_summary": [
+      {
+        "strategy": "random_same_cohort",
+        "split": "train",
+        "parts": 740811,
+        "defects": 4365,
+        "prevalence": 0.00589219112567173,
+        "first_time_min": 0.0,
+        "first_time_max": 1716.54,
+        "last_time_max": 1718.48
+      },
+      {
+        "strategy": "random_same_cohort",
+        "split": "validation",
+        "parts": 185203,
+        "defects": 1091,
+        "prevalence": 0.005890833301836363,
+        "first_time_min": 0.01,
+        "first_time_max": 1713.69,
+        "last_time_max": 1718.48
+      },
+      {
+        "strategy": "random_same_cohort",
+        "split": "exploratory_evaluation",
+        "parts": 231504,
+        "defects": 1364,
+        "prevalence": 0.005891906835303062,
+        "first_time_min": 0.02,
+        "first_time_max": 1713.7,
+        "last_time_max": 1718.48
+      },
+      {
+        "strategy": "chronological_purged",
+        "split": "train",
+        "parts": 734044,
+        "defects": 5282,
+        "prevalence": 0.0071957539330067405,
+        "first_time_min": 0.0,
+        "first_time_max": 1046.32,
+        "last_time_max": 1046.35
+      },
+      {
+        "strategy": "chronological_purged",
+        "split": "validation",
+        "parts": 186840,
+        "defects": 574,
+        "prevalence": 0.003072147291800471,
+        "first_time_min": 1046.36,
+        "first_time_max": 1346.29,
+        "last_time_max": 1355.96
+      },
+      {
+        "strategy": "chronological_purged",
+        "split": "exploratory_evaluation",
+        "parts": 236634,
+        "defects": 964,
+        "prevalence": 0.004073801736014267,
+        "first_time_min": 1356.56,
+        "first_time_max": 1716.54,
+        "last_time_max": 1718.48
+      }
+    ],
+    "model_parameters": {
+      "max_iter": 100,
+      "max_leaf_nodes": 15,
+      "learning_rate": 0.1,
+      "class_weight": "balanced",
+      "early_stopping": false,
+      "random_state": 42
+    },
+    "validation_results": [
+      {
+        "strategy": "random_same_cohort",
+        "feature_set": "numeric_counts",
+        "feature_count": 51,
+        "validation_ap": 0.045179498940656836
+      },
+      {
+        "strategy": "random_same_cohort",
+        "feature_set": "numeric_counts_plus_dates",
+        "feature_count": 56,
+        "validation_ap": 0.049885046344385654
+      },
+      {
+        "strategy": "chronological_purged",
+        "feature_set": "numeric_counts",
+        "feature_count": 51,
+        "validation_ap": 0.05195034297729272
+      },
+      {
+        "strategy": "chronological_purged",
+        "feature_set": "numeric_counts_plus_dates",
+        "feature_count": 56,
+        "validation_ap": 0.052426034897495755
+      }
+    ],
+    "exploratory_evaluation_results": [
+      {
+        "strategy": "random_same_cohort",
+        "selected_features": "numeric_counts_plus_dates",
+        "parts": 231504,
+        "defects": 1364,
+        "prevalence": 0.005891906835303062,
+        "average_precision": 0.06600647064361416,
+        "capacity_requested": 0.01,
+        "inspected": 2316,
+        "capacity_actual": 0.010004146796599627,
+        "precision": 0.10535405872193437,
+        "recall": 0.17888563049853373,
+        "f1": 0.13260869565217392,
+        "tn": 228068,
+        "fp": 2072,
+        "fn": 1120,
+        "tp": 244,
+        "lift": 17.881148101438928
+      },
+      {
+        "strategy": "chronological_purged",
+        "selected_features": "numeric_counts_plus_dates",
+        "parts": 236634,
+        "defects": 964,
+        "prevalence": 0.004073801736014267,
+        "average_precision": 0.016582250143355116,
+        "capacity_requested": 0.01,
+        "inspected": 2367,
+        "capacity_actual": 0.01000278911737113,
+        "precision": 0.04773975496408957,
+        "recall": 0.11721991701244813,
+        "f1": 0.06784749324527169,
+        "tn": 233416,
+        "fp": 2254,
+        "fn": 851,
+        "tp": 113,
+        "lift": 11.718723211797064
+      }
+    ],
+    "independent_holdout": false,
+    "operational_feature_availability_verified": false,
+    "time_units": "supplied numeric dataset units; physical units unverified",
+    "code_sha256": {
+      "bosch_dates.py": "4a96f90ca40f647d08aaec689ea97d9f4428ab64e217c134b59ee615403e651d",
+      "bosch.py": "9e37e1f085f7432088878d75f87deaf542180bb377990cd2e79d03cf0a34b24f",
+      "requirements.lock": "c3e40f99b8f69886c70704b0254fda92981a3e0c65b5e18ae6a53a43bbfbaccd"
+    },
+    "notebook_source_sha256": "86e4a4112f200c2ce4f91dad1b686add48f4261c81c57663c7c4a1d9624b0fd1"
+  },
+  "numeric_quality": {
+    "mean_sensor_missing_percent_as_displayed": 81.084898,
+    "S0_F2_vs_S1_F24_missing_mask_disagreements": 1642
+  },
+  "figures": {
+    "numeric_missingness.png": {
+      "notebook": "explore.ipynb",
+      "run_id": "20261030T204345176829Z",
+      "source_cell_zero_based": 7,
+      "sha256": "5e47d09afbb7f4a11589b9ff98f17cf26a3249bb0c8fec63215c4cf91f55b603"
+    },
+    "temporal_evaluation.png": {
+      "notebook": "date_analysis.ipynb",
+      "run_id": "dates_20261029T140103667151Z",
+      "source_cell_zero_based": 16,
+      "sha256": "f70486c0b1a1931692b5007fc78c7dc7dc20e05989af0a3d0083ff64317f6fbb"
+    }
+  }
+}
