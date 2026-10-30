@@ -1,7 +1,7 @@
 {
   "status": "Executed full-file exploratory experiments; not independent validation.",
   "numeric": {
-    "run_id": "20261030T204345176829Z",
+    "run_id": "20261030T212935626972Z",
     "scope": "full numeric dataset",
     "loaded_rows": 1183747,
     "seed": 42,
@@ -139,7 +139,7 @@
       "requirements.txt": "2da6476b4022d78cab19175ecaf37332f128b54879a7ebfd0485a52eef21352b",
       "requirements.lock": "c3e40f99b8f69886c70704b0254fda92981a3e0c65b5e18ae6a53a43bbfbaccd"
     },
-    "notebook_source_sha256": "fdf396e5a1682cabecc4adf0d5242add0c783c739f4c4ac7e632630193585c0e"
+    "notebook_source_sha256": "5b608bd41e641ac4065bca3f3eff89d25146da190d62fd5857f27b0957b4cf99"
   },
   "date_extension": {
     "run_id": "dates_20261029T140103667151Z",
@@ -345,7 +345,7 @@
   "figures": {
     "numeric_missingness.png": {
       "notebook": "explore.ipynb",
-      "run_id": "20261030T204345176829Z",
+      "run_id": "20261030T212935626972Z",
       "source_cell_zero_based": 7,
       "sha256": "5e47d09afbb7f4a11589b9ff98f17cf26a3249bb0c8fec63215c4cf91f55b603"
     },

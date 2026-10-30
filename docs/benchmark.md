@@ -51,10 +51,14 @@ Use 1,000 draws, seed 42, percentile endpoints 2.5% and 97.5%. Width 10 is the p
 
 Zero-defect draws have undefined AP/recall and are counted as omitted; the implementation rejects analyses with more than 5% omitted draws. No stratification forces defect prevalence to remain fixed.
 
+## Inspection workload
+
+The [capacity table](capacity.md) reports 1%, 2%, 5%, and 10% scenarios for the original balanced chronological model, separately for validation and exploratory evaluation. No new capacity is selected, and the uncertainty intervals above remain specific to 1%.
+
 ## Provenance and checks
 
 The [executed notebook](../benchmark_analysis.ipynb) contains the full-file calculation, tables and figure. The [aggregate receipt](benchmark_results.json) records source-manifest and split hashes, exact columns and parameters, code hashes, versions, estimates and interval diagnostics. Predictions, resampling draws and models remain in ignored local artifacts. [Reproduction instructions](reproduction.md#class-weight-benchmark-and-uncertainty).
 
 Tests compare weighted metric calculations against explicitly duplicated rows, cover score ties/zero multiplicities, verify deterministic paired resampling and zero differences for identical models, and reject invalid inputs. An additional 100 seeded synthetic cases reconciled AP with scikit-learn and capacity metrics with the existing implementation.
 
-References: [scikit-learn HGB class weights](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html); [time-series bootstrap background](https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ADAfaEPoV.pdf). The fixed time-bin cluster scheme is described explicitly above and should not be confused with other block-bootstrap algorithms.
+References: [scikit-learn HGB class weights](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html); [time-series bootstrap background](https://users.ssc.wisc.edu/~behansen/718/HardleHorowitzKreiss.pdf). The fixed time-bin cluster scheme is described explicitly above and should not be confused with other block-bootstrap algorithms.

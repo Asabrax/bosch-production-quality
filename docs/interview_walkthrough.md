@@ -60,6 +60,10 @@ Close with what the project demonstrates: justified data-quality decisions, cons
 
 The unweighted HGB changes only class weighting, keeping features and splits fixed. Chronological AP is 1.19% versus 1.66% for the balanced model; at 1% capacity it finds 98 versus 113 defects. Paired time-bin bootstrap intervals for the differences include zero at all three tested widths. Explain why a higher point estimate does not establish an advantage, and why fixed-model evaluation intervals omit retraining and future drift. See the [benchmark analysis](benchmark.md) for exact intervals and assumptions.
 
+## Inspection-capacity follow-up
+
+Use the [capacity table](capacity.md) to explain how inspecting 1%, 2%, 5%, or 10% changes defect coverage and false alarms. Validation and exploratory evaluation are shown separately. More inspections can improve recall without improving the model itself. An operating policy needs a real budget and should be chosen using validation data before independent evaluation.
+
 ## Before the interview
 
 Run the tests yourself, trace one synthetic part through `build_features`, and explain the temporal split on a handful of timestamps. Know which results are newly executed, which are historical references, and which assumptions remain unverified. Describe your exploratory work and the refactoring assistance accurately; claim understanding only for code and decisions you can explain.

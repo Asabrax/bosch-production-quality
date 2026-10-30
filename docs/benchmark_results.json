@@ -1,5 +1,5 @@
 {
-  "run_id": "benchmark_20261030T211650803231Z",
+  "run_id": "benchmark_20261030T212935628830Z",
   "source_run_id": "dates_20261029T140103667151Z",
   "scope": "full files; saved date partitions",
   "source_manifest_sha256": "44f3ff3dc5caa15111af02f5ab253dda89252c70a9ce4e86c072ab3a510c7ec7",
@@ -10,7 +10,7 @@
     "bosch_uncertainty.py": "669cc0752b27def1f9dc02a826cc6f8744636c25996604b08086b033067223ef",
     "requirements.lock": "c3e40f99b8f69886c70704b0254fda92981a3e0c65b5e18ae6a53a43bbfbaccd"
   },
-  "notebook_source_sha256": "96a2f74f21bc2efb73f04aa63ca941cff75004d3866283c5ec6245f8538c2875",
+  "notebook_source_sha256": "42843af1333a158fb54dd377c02a4aa8f1115f18bbeb2fac6a5b9f96a37a585d",
   "python": "3.14.4",
   "versions": {
     "numpy": "2.5.4",
@@ -18,6 +18,136 @@
     "scikit-learn": "1.9.1",
     "matplotlib": "3.11.2"
   },
+  "capacity_results": [
+    {
+      "partition": "validation",
+      "parts": 186840,
+      "defects": 574,
+      "capacity_requested": 0.01,
+      "inspected": 1869,
+      "capacity_actual": 0.010003211303789339,
+      "precision": 0.0599250936329588,
+      "recall": 0.1951219512195122,
+      "f1": 0.09169054441260745,
+      "tn": 184509,
+      "fp": 1757,
+      "fn": 462,
+      "tp": 112,
+      "lift": 19.505931174881574
+    },
+    {
+      "partition": "validation",
+      "parts": 186840,
+      "defects": 574,
+      "capacity_requested": 0.02,
+      "inspected": 3737,
+      "capacity_actual": 0.020001070434596445,
+      "precision": 0.03104094193203104,
+      "recall": 0.20209059233449478,
+      "f1": 0.053815819995360704,
+      "tn": 182645,
+      "fp": 3621,
+      "fn": 458,
+      "tp": 116,
+      "lift": 10.103988833764252
+    },
+    {
+      "partition": "validation",
+      "parts": 186840,
+      "defects": 574,
+      "capacity_requested": 0.05,
+      "inspected": 9342,
+      "capacity_actual": 0.05,
+      "precision": 0.013594519374866196,
+      "recall": 0.22125435540069685,
+      "f1": 0.025615167406212187,
+      "tn": 177051,
+      "fp": 9215,
+      "fn": 447,
+      "tp": 127,
+      "lift": 4.425087108013938
+    },
+    {
+      "partition": "validation",
+      "parts": 186840,
+      "defects": 574,
+      "capacity_requested": 0.1,
+      "inspected": 18684,
+      "capacity_actual": 0.1,
+      "precision": 0.008402911582102334,
+      "recall": 0.2735191637630662,
+      "f1": 0.016304912244262126,
+      "tn": 167739,
+      "fp": 18527,
+      "fn": 417,
+      "tp": 157,
+      "lift": 2.7351916376306624
+    },
+    {
+      "partition": "exploratory_evaluation",
+      "parts": 236634,
+      "defects": 964,
+      "capacity_requested": 0.01,
+      "inspected": 2367,
+      "capacity_actual": 0.01000278911737113,
+      "precision": 0.04773975496408957,
+      "recall": 0.11721991701244813,
+      "f1": 0.06784749324527169,
+      "tn": 233416,
+      "fp": 2254,
+      "fn": 851,
+      "tp": 113,
+      "lift": 11.718723211797064
+    },
+    {
+      "partition": "exploratory_evaluation",
+      "parts": 236634,
+      "defects": 964,
+      "capacity_requested": 0.02,
+      "inspected": 4733,
+      "capacity_actual": 0.020001352299331455,
+      "precision": 0.025776463131206424,
+      "recall": 0.12655601659751037,
+      "f1": 0.04282955941723714,
+      "tn": 231059,
+      "fp": 4611,
+      "fn": 842,
+      "tp": 122,
+      "lift": 6.3273730047613075
+    },
+    {
+      "partition": "exploratory_evaluation",
+      "parts": 236634,
+      "defects": 964,
+      "capacity_requested": 0.05,
+      "inspected": 11832,
+      "capacity_actual": 0.05000126778062324,
+      "precision": 0.013269100743745774,
+      "recall": 0.1628630705394191,
+      "f1": 0.02453891841200375,
+      "tn": 223995,
+      "fp": 11675,
+      "fn": 807,
+      "tp": 157,
+      "lift": 3.2571788230244163
+    },
+    {
+      "partition": "exploratory_evaluation",
+      "parts": 236634,
+      "defects": 964,
+      "capacity_requested": 0.1,
+      "inspected": 23664,
+      "capacity_actual": 0.10000253556124648,
+      "precision": 0.008916497633536174,
+      "recall": 0.21887966804979253,
+      "f1": 0.017134968328731525,
+      "tn": 212217,
+      "fp": 23453,
+      "fn": 753,
+      "tp": 211,
+      "lift": 2.1887411836246877
+    }
+  ],
   "parameters": {
     "random_same_cohort": {
       "columns": [
@@ -568,7 +698,7 @@
   "includes_training_uncertainty": false,
   "operational_feature_availability_verified": false,
   "figure": {
-    "source_cell_zero_based": 9,
+    "source_cell_zero_based": 11,
     "sha256": "5ca28e0d6f919877ae67f67b2870e04149db4855722da5fe4006265dc1a47895"
   }
 }

@@ -22,6 +22,8 @@ The date benchmark changes **only class weighting**, retaining the saved feature
 
 *Chronological evaluation: 236,634 parts, 964 defects. Conditional 95% percentile intervals from 1,000 paired time-bin bootstrap draws; primary bin width 10 dataset units. Widths 5 and 20 are reported as sensitivity checks. These intervals exclude retraining uncertainty and future drift. [Exact results and assumptions](docs/benchmark.md).*
 
+See the [inspection-capacity trade-off](docs/capacity.md) for precision, recall, false alarms, and defects missed at 1%, 2%, 5%, and 10%, reported separately on validation and exploratory evaluation. Increasing capacity changes workload, not ranking quality.
+
 ## Three findings
 
 1. **Missingness deserves investigation before deletion.** Numeric sensors are 81.08% missing on average. Shared within-station masks suggest route structure; similar missing percentages alone do not prove identical coverage. Preserve NaNs, legitimate zeros, and unusual measurements unless evidence supports a correction.

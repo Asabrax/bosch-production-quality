@@ -86,21 +86,6 @@ A sensor/route flag might arise after the desired screening point or reflect rew
 - The original top-k code used floor rounding and default `argsort` tie behavior; the new code uses ceiling (at most one additional part) and stable input order. Both the requested and actual inspection fractions are recorded.
 - Counts use uint16 and selected sensors float32. Raw sensor values, all-missing parts and sparse features are preserved. Entirely missing training sensors stay in the imputer schema.
 
-## Lecture alignment
-
-Materials were read locally under `../data_aai_sose26/`. Relevant PDF sections and examples were inspected; these course files are not copied into the portfolio repository.
-
-- Lecture 4, `lecture04_missing_values/l04-missing_values.pdf` and the Pima missing-values solution: investigate missingness and justify treatment from context.
-- Lecture 5, `lecture05_outliers/l05-outliers.pdf` and `l05e2-solution-Iris_Dataset_Outliers_Merging.ipynb`: separate outlier detection from treatment; retain diagnostic boxplots.
-- Lecture 6, `lecture06_visual_EDA/l06-visual_EDA.pdf` and visualization demo: univariate and target-conditioned visual exploration.
-- Lecture 7, `lecture07_feature_engineering/l07-feature_engineering.pdf` and Ames feature-engineering solution: reusable transformations; train-only learned feature steps.
-- Lecture 8, `lecture08_modelling_part_1/l08-modelling_part_1.pdf` and train/test fitting demo: complexity control and train/validation/evaluation separation.
-- Lecture 9, `lecture09_modelling_part_2/l09-modelling_part_2.pdf` and modeling-pipeline solution: leakage and fitted preprocessing inside the training procedure. Nested CV is discussed as future work, not claimed to have run.
-- Lectures 10–11, evaluation PDFs and threshold/profit demos: distinguish score thresholds from inspection decisions; do not estimate profit without costs or treat tuning scores as untainted evaluation.
-- Lecture 12, `lecture12_evaluation_part_3/l12-evaluation_part_3.pdf` and gains/lift demo: plot positive-class recall against the inspected population fraction, and lift against random ranking.
-
-The eight requested notebook sections adapt CRISP-DM to this project; they are not a claim that deployment was performed.
-
 ## Verification record
 
 The initial verification below used bounded source rows and synthetic fixtures. A full numeric execution was subsequently completed on 2026-10-30; see the full-run record below. Archived historical experiments remain reference evidence and were not rerun. Peak process memory has not been measured.
@@ -159,3 +144,7 @@ Chronological uncertainty uses a paired time-bin cluster bootstrap for fixed fit
 An initial calculation completed but encountered a figure-title syntax error before final notebook export. The string was corrected and a fresh top-to-bottom run was used for publication; the incomplete local run is not a public receipt. Source data, saved IDs, original notebooks and their model helpers were preserved.
 
 The README now contains one uncertainty figure; the original figures and full methodological detail remain linked. Exact run provenance and interval diagnostics are in `docs/benchmark_results.json`; assumptions and paired differences at all widths are in `docs/benchmark.md`. These additions do not supply an independent holdout, account for training/selection uncertainty, or verify prediction-time availability.
+
+## Inspection-capacity extension and editorial update
+
+The benchmark now reports 1%, 2%, 5%, and 10% inspection scenarios for the original balanced chronological model, with validation and exploratory evaluation separated. No model or capacity is selected from these additional evaluation results. The bootstrap intervals still refer to 1% only. Numeric conclusions were updated to reflect full execution and distinguish its missing uncertainty analysis from the date-model bootstrap. Course-alignment material was removed, and the methodological reference now points to a research review. Both edited notebooks were rerun so their saved outputs and source hashes remain aligned; the original archive and modeling helpers are unchanged. Current run IDs are in the public receipts.
